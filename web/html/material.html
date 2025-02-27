@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../imagenes/iconoHack.png">
+</head>
+<body class="bodyproject">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content_container">
+            <h3 class="content_title">Porcentaje datos faltantes (-999)</h3>
+            
+            <div id="content_wrapper">
+                <div id="image_container999">
+                    <img src="../imagenes/porcentaje_999.png" class="content_img">
+                </div>
+                
+                <div class="text_container">
+                    <p class="content_descrip">
+                        Este gráfico representa el porcentaje de datos faltantes en los valores de todos los archivos de datos en "precip.MIROC5.RCP60.2006-2100.SDSM_REJ".
+                    </p>
+                    <p class="content_descrip">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod minima, recusandae quas molestias reiciendis earum provident minus deleniti fugit suscipit cumque asperiores consequatur mollitia rerum cupiditate eligendi aperiam odit quia! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat aut obcaecati expedita ducimus officia corporis veritatis dignissimos ipsum pariatur. Consequatur iure illo ducimus sint veniam vitae itaque fugit ipsa perspiciatis.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="csv"><a href="https://drive.google.com/file/d/1DlAu7YYrdAo27qhS4oknChqNkGm4QuEM/view?usp=sharing"><h1>Descarga aqui el CSV</h1></a></div>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+            }
+            .calculator {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: #333;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                font-weight: bold;
+                color: #555;
+            }
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            .result {
+                margin-top: 20px;
+                font-weight: bold;
+                color: #333;
+            }
+            .recommendation {
+                margin-top: 10px;
+                color: #555;
+                font-style: italic;
+            }
+        </style>
+    </head>    
+    <!-- Calculadora de Material -->
+    <div class="calculator">
+        <h2>Calculadora de Material</h2>
+        <label for="gasto-material">Gasto mensual en Material (€):</label>
+        <input type="number" id="gasto-material" placeholder="Ingrese el gasto en €">
+    
+        <button onclick="calcularMaterial()">Calcular Ahorro</button>
+    
+        <div class="result" id="resultado-material"></div>
+        <div class="recommendation" id="recomendacion-material"></div>
+    </div>
+    
+    <script>
+        // Constantes de cálculo
+        const diasPorMes = 30;
+        const mesesPorAno = 12;
+    
+        // Calculadora de Material
+        function calcularMaterial() {
+            const gastoMensual = parseFloat(document.getElementById('gasto-material').value) || 0;
+            const gastoAnual = gastoMensual * mesesPorAno;
+    
+            document.getElementById('resultado-material').innerText =
+                `Gasto Anual: €${gastoAnual.toFixed(2)}`;
+            document.getElementById('recomendacion-material').innerText =
+                "Recomendación: Compra materiales reciclados y en oferta.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 3</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="../imagenes/iconoHack.png">
+</head>
+<body class="bodyproject">
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content_container">
+            <h3 class="content_title">Total precipitaciones anual</h3>
+            
+            <div class="content_wrapper">
+                <img src="../imagenes/total_anual.png" alt="Imagen de phishing" class="content_img">
+                
+                <div class="text_container">
+                    <p class="content_descrip">
+                        Este gráfico representa el total anual de precipitaciones a lo largo del tiempo, con datos que abarcan desde aproximadamente el año 2006 hasta el 2100.
+                    </p>
+                    <h2>Elementos clave del gráfico:</h2>
+                    <ul>
+                        <li><strong>Eje X (horizontal):</strong> Representa los años, mostrando una evolución a largo plazo del total de precipitaciones.</li>
+                        <li><strong>Eje Y (vertical):</strong> Indica la cantidad media de precipitaciones en un rango de valores cercanos a 35.000.000 y 85.000.000.</li>
+                        <li><strong>Línea verde con puntos:</strong> Representa la evolución de la media anual de precipitaciones, con marcadores en cada año para mostrar los valores exactos.</li>
+                    </ul>
+                    
+                    <h2>Interpretación:</h2>
+                    <ul>
+                        <li>Se observa una <strong>alta variabilidad</strong> en el total anual de precipitaciones a lo largo del tiempo.</li>
+                        <li>Existen <strong>picos y caídas bruscas</strong>, lo que sugiere años con mayor o menor cantidad de lluvia.</li>
+                        <li>A largo plazo, no se distingue una <strong>tendencia clara</strong> de aumento o disminución, pero sí una gran variabilidad interanual.</li>
+                        <li>Posibles eventos extremos o cambios climáticos pueden estar influyendo en la irregularidad de las precipitaciones.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="csv"><a href="https://drive.google.com/file/d/1nHpRYCbdBq3ov3NKHnCVljoKvNIepH8r/view?usp=sharing"><h1>Descarga aqui el CSV</h1></a></div>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 20px;
+            }
+            .calculator {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            h2 {
+                font-size: 20px;
+                margin-bottom: 15px;
+                color: #333;
+            }
+            label {
+                display: block;
+                margin-top: 10px;
+                font-weight: bold;
+                color: #555;
+            }
+            input, select {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            button {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #45a049;
+            }
+            .result {
+                margin-top: 20px;
+                font-weight: bold;
+                color: #333;
+            }
+            .recommendation {
+                margin-top: 10px;
+                color: #555;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    
+    <!-- Calculadora de Electricidad -->
+    <div class="calculator">
+        <h2>Calculadora de Electricidad</h2>
+        <label for="consumo-electricidad">Consumo diario de Electricidad (kWh):</label>
+        <input type="number" id="consumo-electricidad" placeholder="Ingrese el consumo en kWh">
+    
+        <label for="autoconsumo">Aumento de Autoconsumo (%):</label>
+        <input type="number" id="autoconsumo" placeholder="Ingrese el % de aumento">
+    
+        <button onclick="calcularElectricidad()">Calcular Ahorro</button>
+    
+        <div class="result" id="resultado-electricidad"></div>
+        <div class="recommendation" id="recomendacion-electricidad"></div>
+    </div>    
+    <script>
+        // Constantes de cálculo
+        const diasPorMes = 30;
+        const mesesPorAno = 12;
+    
+        // Calculadora de Electricidad
+        function calcularElectricidad() {
+            const consumoDiario = parseFloat(document.getElementById('consumo-electricidad').value) || 0;
+            const autoconsumo = parseFloat(document.getElementById('autoconsumo').value) || 0;
+    
+            const consumoMensual = consumoDiario * diasPorMes;
+            const consumoAnual = consumoMensual * mesesPorAno;
+    
+            const ahorroAutoconsumo = (autoconsumo / 100) * consumoAnual;
+            const nuevoConsumoAnual = consumoAnual - ahorroAutoconsumo;
+    
+            document.getElementById('resultado-electricidad').innerText =
+                `Consumo Mensual: ${consumoMensual.toFixed(2)} kWh, Anual: ${consumoAnual.toFixed(2)} kWh\n` +
+                `Ahorro Mensual: ${(ahorroAutoconsumo / mesesPorAno).toFixed(2)} kWh, Anual: ${ahorroAutoconsumo.toFixed(2)} kWh\n` +
+                `Nuevo Consumo Anual: ${nuevoConsumoAnual.toFixed(2)} kWh`;
+            document.getElementById('recomendacion-electricidad').innerText =
+                `Ahorras un ${autoconsumo}% con autoconsumo (placas solares).`;
+        }
+    </script>
+    <br><br>
+    
+    <footer>
+        <p>&copy; 2024 Group 5</p>
+        <div class="social-links">
+            <a href="https://facebook.com">Facebook</a> |
+            <a href="https://twitter.com">Twitter</a> |
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
