@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadoras de Ahorro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .recommendation {
+            margin-top: 10px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Calculadora de Electricidad -->
+<div class="calculator">
+    <h2>Calculadora de Electricidad</h2>
+    <label for="consumo-electricidad">Consumo diario de Electricidad (kWh):</label>
+    <input type="number" id="consumo-electricidad" placeholder="Ingrese el consumo en kWh">
+
+    <label for="autoconsumo">Aumento de Autoconsumo (%):</label>
+    <input type="number" id="autoconsumo" placeholder="Ingrese el % de aumento">
+
+    <button onclick="calcularElectricidad()">Calcular Ahorro</button>
+
+    <div class="result" id="resultado-electricidad"></div>
+    <div class="recommendation" id="recomendacion-electricidad"></div>
+</div>
+
+<!-- Calculadora de Agua -->
+<div class="calculator">
+    <h2>Calculadora de Agua</h2>
+    <label for="consumo-agua">Consumo diario de Agua (litros):</label>
+    <input type="number" id="consumo-agua" placeholder="Ingrese el consumo en litros">
+
+    <label>Métodos de Ahorro:</label>
+    <label><input type="checkbox" id="aireadores"> Aireadores de grifo (10%)</label>
+    <label><input type="checkbox" id="inodoros"> Inodoros de doble descarga (20%)</label>
+    <label><input type="checkbox" id="sensores"> Sensores en grifos y urinarios (10%)</label>
+
+    <button onclick="calcularAgua()">Calcular Ahorro</button>
+
+    <div class="result" id="resultado-agua"></div>
+    <div class="recommendation" id="recomendacion-agua"></div>
+</div>
+
+<!-- Calculadora de Mantenimiento -->
+<div class="calculator">
+    <h2>Calculadora de Mantenimiento</h2>
+    <label for="gasto-mantenimiento">Gasto mensual en Mantenimiento (€):</label>
+    <input type="number" id="gasto-mantenimiento" placeholder="Ingrese el gasto en €">
+
+    <button onclick="calcularMantenimiento()">Calcular Ahorro</button>
+
+    <div class="result" id="resultado-mantenimiento"></div>
+    <div class="recommendation" id="recomendacion-mantenimiento"></div>
+</div>
+
+<!-- Calculadora de Material -->
+<div class="calculator">
+    <h2>Calculadora de Material</h2>
+    <label for="gasto-material">Gasto mensual en Material (€):</label>
+    <input type="number" id="gasto-material" placeholder="Ingrese el gasto en €">
+
+    <button onclick="calcularMaterial()">Calcular Ahorro</button>
+
+    <div class="result" id="resultado-material"></div>
+    <div class="recommendation" id="recomendacion-material"></div>
+</div>
+
+<script>
+    // Constantes de cálculo
+    const diasPorMes = 30;
+    const mesesPorAno = 12;
+
+    // Calculadora de Electricidad
+    function calcularElectricidad() {
+        const consumoDiario = parseFloat(document.getElementById('consumo-electricidad').value) || 0;
+        const autoconsumo = parseFloat(document.getElementById('autoconsumo').value) || 0;
+
+        const consumoMensual = consumoDiario * diasPorMes;
+        const consumoAnual = consumoMensual * mesesPorAno;
+
+        const ahorroAutoconsumo = (autoconsumo / 100) * consumoAnual;
+        const nuevoConsumoAnual = consumoAnual - ahorroAutoconsumo;
+
+        document.getElementById('resultado-electricidad').innerText =
+            `Consumo Mensual: ${consumoMensual.toFixed(2)} kWh, Anual: ${consumoAnual.toFixed(2)} kWh\n` +
+            `Ahorro Mensual: ${(ahorroAutoconsumo / mesesPorAno).toFixed(2)} kWh, Anual: ${ahorroAutoconsumo.toFixed(2)} kWh\n` +
+            `Nuevo Consumo Anual: ${nuevoConsumoAnual.toFixed(2)} kWh`;
+        document.getElementById('recomendacion-electricidad').innerText =
+            `Ahorras un ${autoconsumo}% con autoconsumo (placas solares).`;
+    }
+
+    // Calculadora de Agua
+    function calcularAgua() {
+        const consumoDiario = parseFloat(document.getElementById('consumo-agua').value) || 0;
+        const aireadores = document.getElementById('aireadores').checked;
+        const inodoros = document.getElementById('inodoros').checked;
+        const sensores = document.getElementById('sensores').checked;
+
+        let ahorroTotal = 0;
+        if (aireadores) ahorroTotal += 10;
+        if (inodoros) ahorroTotal += 20;
+        if (sensores) ahorroTotal += 10;
+
+        const consumoMensual = consumoDiario * diasPorMes;
+        const consumoAnual = consumoMensual * mesesPorAno;
+
+        const ahorroAgua = (ahorroTotal / 100) * consumoAnual;
+        const nuevoConsumoAnual = consumoAnual - ahorroAgua;
+
+        document.getElementById('resultado-agua').innerText =
+            `Consumo Mensual: ${consumoMensual.toFixed(2)} litros, Anual: ${consumoAnual.toFixed(2)} litros\n` +
+            `Ahorro Mensual: ${(ahorroAgua / mesesPorAno).toFixed(2)} litros, Anual: ${ahorroAgua.toFixed(2)} litros\n` +
+            `Nuevo Consumo Anual: ${nuevoConsumoAnual.toFixed(2)} litros`;
+        document.getElementById('recomendacion-agua').innerText =
+            `Ahorras un ${ahorroTotal}% con los métodos seleccionados.`;
+    }
+
+    // Calculadora de Mantenimiento
+    function calcularMantenimiento() {
+        const gastoMensual = parseFloat(document.getElementById('gasto-mantenimiento').value) || 0;
+        const gastoAnual = gastoMensual * mesesPorAno;
+
+        document.getElementById('resultado-mantenimiento').innerText =
+            `Gasto Anual: €${gastoAnual.toFixed(2)}`;
+        document.getElementById('recomendacion-mantenimiento').innerText =
+            "Recomendación: Realiza mantenimiento preventivo para reducir costos.";
+    }
+
+    // Calculadora de Material
+    function calcularMaterial() {
+        const gastoMensual = parseFloat(document.getElementById('gasto-material').value) || 0;
+        const gastoAnual = gastoMensual * mesesPorAno;
+
+        document.getElementById('resultado-material').innerText =
+            `Gasto Anual: €${gastoAnual.toFixed(2)}`;
+        document.getElementById('recomendacion-material').innerText =
+            "Recomendación: Compra materiales reciclados y en oferta.";
+    }
+</script>
+
+</body>
+</html>
