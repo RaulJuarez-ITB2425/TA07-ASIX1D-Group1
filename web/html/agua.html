@@ -17,33 +17,27 @@
     </header>
     <main>
         <div class="content_container">
-            <h3 class="content_title">Media precipitaciones anual</h3>
+            <h3 class="content_title">Consumo de agua en el ITB</h3>
             
             <div class="content_wrapper">
-                <img src="../imagenes/media_anual.png" alt="Imagen de phishing" class="content_img">
-                
                 <div class="text_container">
                     <p class="content_descrip">
                         Hemos organizado los datos de consumo de agua en el ITB y gracias a nuestro analisis y a datos de patrones de consumo de fuentes externas (estacionalidad), 
-                        hemos podido estimar el posible ahorro maximo con algunos metodos que creemos que son economicos de instalar y podrian suponer mucho ahorro de agua.                    </p>
-                    <h2>Elementos clave del gráfico:</h2>
+                        hemos podido estimar el posible ahorro maximo con algunos metodos que creemos que son economicos de instalar y podrian suponer mucho ahorro de agua.</p>
+                    <h2>Explicacion de los datos del excel y su procesamiento</h2>
                     <ul>
-                        <li><strong>Eje X (horizontal):</strong> Representa los años, mostrando una evolución a largo plazo de la media de precipitaciones.</li>
-                        <li><strong>Eje Y (vertical):</strong> Indica la cantidad media de precipitaciones en un rango de valores cercanos a 0.02 y 0.04.</li>
-                        <li><strong>Línea azul con puntos:</strong> Representa la evolución de la media anual de precipitaciones, con marcadores en cada año para mostrar los valores exactos.</li>
-                    </ul>
-                    
-                    <h2>Interpretación:</h2>
-                    <ul>
-                        <li>Se observa una <strong>alta variabilidad</strong> en la media anual de precipitaciones a lo largo del tiempo.</li>
-                        <li>Existen <strong>picos y caídas bruscas</strong>, lo que sugiere años con mayor o menor cantidad de lluvia.</li>
-                        <li>A largo plazo, no se distingue una <strong>tendencia clara</strong> de aumento o disminución, pero sí una gran variabilidad interanual.</li>
-                        <li>Posibles eventos extremos o cambios climáticos pueden estar influyendo en la irregularidad de las precipitaciones.</li>
+                        <li><strong>Datos:</strong> tenemos datos de tres dias de Febrero de 2024, dos entre semana y uno en fin de semana, sacados de recibos de agua.</li>
+                        <li><strong>Interpretacion:</strong> a partir de estos datos hemos sacado datos que nos parecian relevantes para hacer el analisis del consumo que queriamos hacer; consumo por medio por dia, semana y mes que nos han servido para extrapolarlos y sacar el consumo de invierno, con el que luego hemos podido sacar el anual.</li>
+                        <li><strong>Asumimos que</strong> el patron de consumo del agua sigue el de otros institutos que hemos encontrado; en invierno se consume un 31% del agua consumida en todo el año, en primavera un 25%, en verano un 16% (principalmente debido a que hay muchas semanas sin alumnos en el instituto) y en otoño un 28%.</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="csv"><a href="https://drive.google.com/file/d/1nHpRYCbdBq3ov3NKHnCVljoKvNIepH8r/view?usp=sharing"><h1>Descarga aqui el CSV</h1></a></div>
+        <div class="csv"><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRH4Q9ua49j3ICC6s48Iy5Rn4wqydUyH-TuP9mO-Oeb8_xU_nwuy7XidCLU_xNE07BAG1BdknCGR3_D/pubhtml?gid=0&single=true"><h1>Descarga aqui el Excel</h1></a></div>
+        <div>  
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRH4Q9ua49j3ICC6s48Iy5Rn4wqydUyH-TuP9mO-Oeb8_xU_nwuy7XidCLU_xNE07BAG1BdknCGR3_D/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        </div>
+        
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -106,7 +100,7 @@
         </style>
     </head>
     <body>
-    <!-- Calculadora de Agua -->
+    <div>Calculadora de consumo y ahorro de agua</div><!-- Calculadora de Agua -->
     <div class="calculator">
         <h2>Calculadora de Agua</h2>
         <label for="consumo-agua">Consumo diario de Agua (litros):</label>
