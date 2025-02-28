@@ -46,42 +46,52 @@
             }
             .calculator {
                 background-color: #fff;
-                padding: 20px;
                 border-radius: 8px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 margin-bottom: 20px;
-                max-width: 400px;
+                max-width: 600px;
+                padding: 20px;
                 margin-left: auto;
                 margin-right: auto;
             }
             h2 {
                 font-size: 20px;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
                 color: #333;
+                padding: 0px 150px;
+                text-align: center;
             }
             label {
                 display: block;
                 margin-top: 10px;
-                font-weight: bold;
                 color: #555;
+                font-weight: bold;
             }
+
+            #subt2 {
+                margin-bottom: 10px;
+            }
+
             input, select {
                 width: 100%;
-                padding: 8px;
-                margin-top: 5px;
-                border: 1px solid #ccc;
+                padding: 10px; /* Aumenta el padding */
+                margin: 10px 0;
+                border: 2px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
             }
+            .button-container {
+                text-align: center;
+            }
             button {
                 margin-top: 20px;
-                padding: 10px 20px;
+                padding: 15px 30px; /* Aumenta el padding */
                 background-color: #4CAF50;
                 color: white;
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
-                font-size: 16px;
+                font-size: 18px; /* Aumenta el tamaño de la fuente */
             }
             button:hover {
                 background-color: #45a049;
@@ -96,6 +106,7 @@
                 color: #555;
                 font-style: italic;
             }
+            
         </style>
 
         <!-- Calculadora de Electricidad -->
@@ -106,9 +117,9 @@
         
             <label for="autoconsumo">Aumento de Autoconsumo (%):</label>
             <input type="number" id="autoconsumo" placeholder="Ingrese el % de aumento">
-        
-            <button onclick="calcularElectricidad()">Calcular Ahorro</button>
-        
+            <div class="button-container">        
+                <button onclick="calcularElectricidad()">Calcular Ahorro</button>
+            </div>
             <div class="result" id="resultado-electricidad"></div>
             <div class="recommendation" id="recomendacion-electricidad"></div>
         </div>    
