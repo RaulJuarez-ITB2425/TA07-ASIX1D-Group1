@@ -6,6 +6,103 @@
     <title>Agua</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../imagenes/barra/gota.jpg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .content_container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content_title {
+            text-align: center;
+            color: #333;
+        }
+        .content_descrip {
+            text-align: justify;
+            color: #555;
+        }
+        .csv {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .csv a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 1.2em;
+        }
+        iframe {
+            width: 100%; /* Ocupa todo el ancho disponible */
+            height: 800px; /* Aumenté la altura para que la tabla se vea completa */
+            border: none;
+            margin-top: 20px;
+        }
+        .calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 600px;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #333;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        .subtitulos {
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button-container {
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .recommendation {
+            margin-top: 10px;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body class="bodyproject">
     <header>
@@ -22,13 +119,13 @@
             <div class="content_wrapper">
                 <div class="text_container">
                     <p class="content_descrip">
-                        Hemos organizado los datos de consumo de agua en el ITB y gracias a nuestro analisis y a datos de patrones de consumo de fuentes externas (estacionalidad), 
-                        hemos podido estimar el posible ahorro maximo con algunos metodos que creemos que son economicos de instalar y podrian suponer mucho ahorro de agua.</p>
-                    <h2>Explicacion de los datos del excel y su procesamiento</h2>
+                        Hemos organizado los datos de consumo de agua en el ITB y gracias a nuestro análisis y a datos de patrones de consumo de fuentes externas (estacionalidad), 
+                        hemos podido estimar el posible ahorro máximo con algunos métodos que creemos que son económicos de instalar y podrían suponer mucho ahorro de agua.</p>
+                    <h2>Explicación de los datos del Excel y su procesamiento</h2>
                     <ul>
-                        <li><strong>Datos:</strong> tenemos datos de tres dias de Febrero de 2024, dos entre semana y uno en fin de semana, sacados de recibos de agua.</li>
-                        <li><strong>Interpretacion:</strong> a partir de estos datos hemos sacado datos que nos parecian relevantes para hacer el analisis del consumo que queriamos hacer; consumo por medio por dia, semana y mes que nos han servido para extrapolarlos y sacar el consumo de invierno, con el que luego hemos podido sacar el anual.</li>
-                        <li><strong>Asumimos que</strong> el patron de consumo del agua sigue el de otros institutos que hemos encontrado; en invierno se consume un 31% del agua consumida en todo el año, en primavera un 25%, en verano un 16% (principalmente debido a que hay muchas semanas sin alumnos en el instituto) y en otoño un 28%.</li>
+                        <li><strong>Datos:</strong> Tenemos datos de tres días de Febrero de 2024, dos entre semana y uno en fin de semana, sacados de recibos de agua.</li>
+                        <li><strong>Interpretación:</strong> A partir de estos datos hemos sacado datos que nos parecían relevantes para hacer el análisis del consumo que queríamos hacer; consumo por medio por día, semana y mes que nos han servido para extrapolarlos y sacar el consumo de invierno, con el que luego hemos podido sacar el anual.</li>
+                        <li><strong>Asumimos que</strong> el patrón de consumo del agua sigue el de otros institutos que hemos encontrado; en invierno se consume un 31% del agua consumida en todo el año, en primavera un 25%, en verano un 16% (principalmente debido a que hay muchas semanas sin alumnos en el instituto) y en otoño un 28%.</li>
                     </ul>
                 </div>
             </div>
@@ -38,136 +135,71 @@
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRH4Q9ua49j3ICC6s48Iy5Rn4wqydUyH-TuP9mO-Oeb8_xU_nwuy7XidCLU_xNE07BAG1BdknCGR3_D/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
         </div>
         
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-            }
-            .calculator {
-                background-color: #fff;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-                max-width: 600px;
-                padding: 20px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            h2 {
-                font-size: 20px;
-                margin-bottom: 25px;
-                color: #333;
-                padding: 0px 150px;
-                text-align: center;
-            }
-            label {
-                display: block;
-                margin-top: 10px;
-                color: #555;
-            }
-            .subtitulos {
-                font-weight: bold;
-            }
-            input, select {
-                width: 100%;
-                padding: 10px; /* Aumenta el padding */
-                margin: 10px 0;
-                border: 2px solid #ccc;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-            .button-container {
-                text-align: center;
-            }
-            button {
-                margin-top: 20px;
-                padding: 15px 30px; /* Aumenta el padding */
-                background-color: #4CAF50;
-                color: white;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 18px; /* Aumenta el tamaño de la fuente */
-            }
-            button:hover {
-                background-color: #45a049;
-            }
-            .result {
-                margin-top: 20px;
-                font-weight: bold;
-                color: #333;
-            }
-            .recommendation {
-                margin-top: 10px;
-                color: #555;
-                font-style: italic;
-            }
-        </style>
-    </head>
-    
-    <div>Calculadora de consumo y ahorro de agua</div><!-- Calculadora de Agua -->
-    <div class="calculator">
-        <h2>Calculadora de Agua</h2>
-        <label class="subtitulos">Consumo diario de Agua (litros):</label>
-        <input type="number" id="consumo-agua" placeholder="Ingrese el consumo en litros">
-    
-        <label class="subtitulos">Métodos de Ahorro:</label>
+        <div>Calculadora de consumo y ahorro de agua</div><!-- Calculadora de Agua -->
+        <div class="calculator">
+            <h2>Calculadora de Agua</h2>
+            <label class="subtitulos">Consumo diario de Agua (litros):</label>
+            <input type="number" id="consumo-agua" placeholder="Ingrese el consumo en litros">
+        
+            <label class="subtitulos">Métodos de Ahorro:</label>
 
-        <div class="method-container">
-            <label for="aireadores">Aireadores de grifo (10%)</label>
-            <input type="checkbox" id="aireadores">
+            <div class="method-container">
+                <label for="aireadores">Aireadores de grifo (10%)</label>
+                <input type="checkbox" id="aireadores">
+            </div>
+            <div class="method-container">
+                <label for="inodoros">Inodoros de doble descarga (20%)</label>
+                <input type="checkbox" id="inodoros">
+            </div>
+            <div class="method-container">
+                <label for="sensores">Sensores en grifos y urinarios (10%)</label>
+                <input type="checkbox" id="sensores">
+            </div>
+
+            <div class="button-container">
+                <button onclick="calcularAgua()">Calcular Ahorro</button>
+            </div>
+
+            <div class="result" id="resultado-agua"></div>
+            <div class="recommendation" id="recomendacion-agua"></div>
         </div>
-        <div class="method-container">
-            <label for="inodoros">Inodoros de doble descarga (20%)</label>
-            <input type="checkbox" id="inodoros">
-        </div>
-        <div class="method-container">
-            <label for="sensores">Sensores en grifos y urinarios (10%)</label>
-            <input type="checkbox" id="sensores">
-        </div>
+        
+        <script>
+            // Constantes de cálculo
+            const diasPorMes = 30;
+            const mesesPorAno = 12;
+        
+            // Calculadora de Agua
+            function calcularAgua() {
+                const consumoDiario = parseFloat(document.getElementById('consumo-agua').value) || 0;
+                const aireadores = document.getElementById('aireadores').checked;
+                const inodoros = document.getElementById('inodoros').checked;
+                const sensores = document.getElementById('sensores').checked;
 
-        <div class="button-container">
-            <button onclick="calcularAgua()">Calcular Ahorro</button>
-        </div>
+                let ahorroTotal = 0;
+                if (aireadores) ahorroTotal += 10;
+                if (inodoros) ahorroTotal += 20;
+                if (sensores) ahorroTotal += 10;
 
-        <div class="result" id="resultado-agua"></div>
-        <div class="recommendation" id="recomendacion-agua"></div>
-    </div>
-    
-    <script>
-        // Constantes de cálculo
-        const diasPorMes = 30;
-        const mesesPorAno = 12;
-    
-        // Calculadora de Agua
-        function calcularAgua() {
-            const consumoDiario = parseFloat(document.getElementById('consumo-agua').value) || 0;
-            const aireadores = document.getElementById('aireadores').checked;
-            const inodoros = document.getElementById('inodoros').checked;
-            const sensores = document.getElementById('sensores').checked;
+                const consumoMensual = consumoDiario * diasPorMes;
+                const consumoAnual = consumoMensual * mesesPorAno;
 
-            let ahorroTotal = 0;
-            if (aireadores) ahorroTotal += 10;
-            if (inodoros) ahorroTotal += 20;
-            if (sensores) ahorroTotal += 10;
+                const ahorroAgua = (ahorroTotal / 100) * consumoAnual;
+                const nuevoConsumoAnual = consumoAnual - ahorroAgua;
 
-            const consumoMensual = consumoDiario * diasPorMes;
-            const consumoAnual = consumoMensual * mesesPorAno;
+                // Mostrar cada resultado en una línea separada
+                document.getElementById('resultado-agua').innerHTML =
+                    `Consumo Anual: ${consumoAnual.toFixed(2)} litros<br>` +
+                    `Consumo Mensual: ${consumoMensual.toFixed(2)} litros<br>` +
+                    `Ahorrado: ${ahorroAgua.toFixed(2)} litros<br>` +
+                    `Nuevo Consumo Anual: ${nuevoConsumoAnual.toFixed(2)} litros`;
 
-            const ahorroAgua = (ahorroTotal / 100) * consumoAnual;
-            const nuevoConsumoAnual = consumoAnual - ahorroAgua;
-
-            // Mostrar cada resultado en una línea separada
-            document.getElementById('resultado-agua').innerHTML =
-                `Consumo Anual: ${consumoAnual.toFixed(2)} litros<br>` +
-                `Consumo Mensual: ${consumoMensual.toFixed(2)} litros<br>` +
-                `Ahorrado: ${ahorroAgua.toFixed(2)} litros<br>` +
-                `Nuevo Consumo Anual: ${nuevoConsumoAnual.toFixed(2)} litros`;
-
-            document.getElementById('recomendacion-agua').innerText =
-                `Ahorras un ${ahorroTotal}% con los métodos seleccionados.`;
-        }
-    </script>
+                document.getElementById('recomendacion-agua').innerText =
+                    `Ahorras un ${ahorroTotal}% con los métodos seleccionados.`;
+            }
+        </script>
+    </main>
+</body>
+</html>
 </body>
 </html>
