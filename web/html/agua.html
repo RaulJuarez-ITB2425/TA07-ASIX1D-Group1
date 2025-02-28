@@ -56,7 +56,7 @@
             }
             h2 {
                 font-size: 20px;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
                 color: #333;
                 padding: 0px 150px;
                 text-align: center;
@@ -64,14 +64,16 @@
             label {
                 display: block;
                 margin-top: 10px;
-                font-weight: bold;
                 color: #555;
+            }
+            .subtitulos {
+                font-weight: bold;
             }
             input, select {
                 width: 100%;
                 padding: 10px; /* Aumenta el padding */
-                margin-top: 10px;
-                border: 1px solid #ccc;
+                margin: 10px 0;
+                border: 2px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
             }
@@ -107,10 +109,10 @@
     <div>Calculadora de consumo y ahorro de agua</div><!-- Calculadora de Agua -->
     <div class="calculator">
         <h2>Calculadora de Agua</h2>
-        <label for="consumo-agua">Consumo diario de Agua (litros):</label>
+        <label class="subtitulos">Consumo diario de Agua (litros):</label>
         <input type="number" id="consumo-agua" placeholder="Ingrese el consumo en litros">
     
-        <label>Métodos de Ahorro:</label>
+        <label class="subtitulos">Métodos de Ahorro:</label>
 
         <div class="method-container">
             <label for="aireadores">Aireadores de grifo (10%)</label>
