@@ -189,10 +189,10 @@ footer .social-links a:hover {
 .bodyproject {
     background-image: linear-gradient(
         0deg,
-        rgba(0,0,0,0.85),
-        rgba(0,0,0,0.85)
+        rgba(0,0,0,0.80),
+        rgba(0,0,0,0.80)
     )
-    ,url("../imagenes/precipitaciones.jpg");
+    ,url("../imagenes/sostenibilidad3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -254,6 +254,13 @@ footer .social-links a:hover {
     width: 100%;
     max-width: 640px;
     margin: 0 auto;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+.img-20 {
+    display: block;
+    width: 100%;
+    max-width: 640px;
     border-radius: 5px;
     border: 2px solid #000000;
 }
