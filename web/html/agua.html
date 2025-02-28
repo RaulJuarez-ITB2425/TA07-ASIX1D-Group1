@@ -47,11 +47,11 @@
             }
             .calculator {
                 background-color: #fff;
-                padding: 20px;
                 border-radius: 8px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 margin-bottom: 20px;
-                max-width: 400px;
+                max-width: 600px;
+                padding: 20px;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -59,6 +59,8 @@
                 font-size: 20px;
                 margin-bottom: 15px;
                 color: #333;
+                padding: 0px 150px;
+                text-align: center;
             }
             label {
                 display: block;
@@ -68,21 +70,24 @@
             }
             input, select {
                 width: 100%;
-                padding: 8px;
-                margin-top: 5px;
+                padding: 10px; /* Aumenta el padding */
+                margin-top: 10px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
                 box-sizing: border-box;
             }
+            .button-container {
+                text-align: center;
+            }
             button {
                 margin-top: 20px;
-                padding: 10px 20px;
+                padding: 15px 30px; /* Aumenta el padding */
                 background-color: #4CAF50;
                 color: white;
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
-                font-size: 16px;
+                font-size: 18px; /* Aumenta el tamaño de la fuente */
             }
             button:hover {
                 background-color: #45a049;
@@ -120,9 +125,11 @@
             <label for="sensores">Sensores en grifos y urinarios (10%)</label>
             <input type="checkbox" id="sensores">
         </div>
-    
-        <button onclick="calcularAgua()">Calcular Ahorro</button>
-    
+
+        <div class="button-container">
+            <button onclick="calcularAgua()">Calcular Ahorro</button>
+        </div>
+
         <div class="result" id="resultado-agua"></div>
         <div class="recommendation" id="recomendacion-agua"></div>
     </div>
