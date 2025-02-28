@@ -169,22 +169,25 @@
             const aireadores = document.getElementById('aireadores').checked;
             const inodoros = document.getElementById('inodoros').checked;
             const sensores = document.getElementById('sensores').checked;
-    
+
             let ahorroTotal = 0;
             if (aireadores) ahorroTotal += 10;
             if (inodoros) ahorroTotal += 20;
             if (sensores) ahorroTotal += 10;
-    
+
             const consumoMensual = consumoDiario * diasPorMes;
             const consumoAnual = consumoMensual * mesesPorAno;
-    
+
             const ahorroAgua = (ahorroTotal / 100) * consumoAnual;
             const nuevoConsumoAnual = consumoAnual - ahorroAgua;
-    
-            document.getElementById('resultado-agua').innerText =
-                `Consumo Mensual: ${consumoMensual.toFixed(2)} litros, Anual: ${consumoAnual.toFixed(2)} litros\n` +
-                `Ahorro Mensual: ${(ahorroAgua / mesesPorAno).toFixed(2)} litros, Anual: ${ahorroAgua.toFixed(2)} litros\n` +
+
+            // Mostrar cada resultado en una línea separada
+            document.getElementById('resultado-agua').innerHTML =
+                `Consumo Anual: ${consumoAnual.toFixed(2)} litros<br>` +
+                `Consumo Mensual: ${consumoMensual.toFixed(2)} litros<br>` +
+                `Ahorrado: ${ahorroAgua.toFixed(2)} litros<br>` +
                 `Nuevo Consumo Anual: ${nuevoConsumoAnual.toFixed(2)} litros`;
+
             document.getElementById('recomendacion-agua').innerText =
                 `Ahorras un ${ahorroTotal}% con los métodos seleccionados.`;
         }
