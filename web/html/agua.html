@@ -47,10 +47,14 @@
     <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRH4Q9ua49j3ICC6s48Iy5Rn4wqydUyH-TuP9mO-Oeb8_xU_nwuy7XidCLU_xNE07BAG1BdknCGR3_D/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 </div>
 <div style="display: flex; justify-content: center; gap: 10px;">
-    <img src="../imagenes/Graficos/litrosanual.png" alt="anual" width="640">
-    <img src="../imagenes/Graficos/litrosestacional.png" alt="estacional" width="640">
+    <img class="img-20" src="../imagenes/Graficos/litrosanual.png" alt="anual">
+    <img class="img-20" src="../imagenes/Graficos/litrosestacional.png" alt="estacional">
 </div>
         <style>
+            h2 {
+                text-align: center;
+                padding-bottom: 5px;
+            }
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f4f4f4;
@@ -66,7 +70,7 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            h2 {
+            .calculator h2 {
                 font-size: 20px;
                 margin-bottom: 25px;
                 color: #333;
@@ -80,6 +84,9 @@
             }
             .subtitulos {
                 font-weight: bold;
+            }
+            #subt2 {
+                margin-bottom: 9px;
             }
             input, select {
                 width: 100%;
@@ -162,14 +169,13 @@
         </style>
     </head>
     
-    <div>Calculadora de consumo y ahorro de agua</div><!-- Calculadora de Agua -->
     <div class="calculator">
         <h2>Calculadora de Agua</h2>
         <label class="subtitulos">Consumo diario de Agua (litros):</label>
         <input type="number" id="consumo-agua" placeholder="Ingrese el consumo en litros">
-    
-        <label class="subtitulos">Métodos de Ahorro:</label>
-    
+        <div id="subt2">
+            <label class="subtitulos">Métodos de Ahorro:</label>
+        </div>
         <div class="method-container">
             <input type="checkbox" id="aireadores">
             <label for="aireadores">Aireadores de grifo (10%)</label>
