@@ -249,6 +249,15 @@ footer .social-links a:hover {
     padding: 10px;
 }
 
+.img-10 {
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 2px solid #000000;
+}
+
 /* Otros */
 section p {
     text-align: center;
